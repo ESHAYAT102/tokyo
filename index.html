@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tokyo</title>
+  <link rel="icon" href="https://i1.sndcdn.com/artworks-000344755380-f63zvh-t500x500.jpg">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+    ::selection {
+      background-color: #1c2333;
+      color: auto;
+      border-radius: 20px;
+    }
+
+    ::-webkit-scrollbar {
+      width: 2px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #a3caf1;
+    }
+
+    ::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      @keyframes fade {
+        0% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fade-in {
+        from {
+          scale: 0.8;
+          opacity: 0;
+        }
+
+        to {
+          scale: 1;
+          opacity: 1;
+        }
+      }
+
+      @keyframes fade-out {
+        to {
+          scale: 1.05;
+          opacity: 0;
+        }
+      }
+    }
+
+    body {
+      overflow-x: hidden;
+      background-color: #0e1525;
+      color: whitesmoke;
+      font-family: "Montserrat", sans-serif;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      animation: fade 1s ease-in-out;
+    }
+
+    .nav-box {
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+    }
+
+    nav {
+      width: 30%;
+      height: 60px;
+      border-radius: 16px;
+      border: 1px solid #a3caf1;
+      background: rgba(255, 255, 255, 0);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      justify-content: center;
+      position: fixed;
+      top: 20px;
+      text-align: center;
+      z-index: 1;
+    }
+
+    nav p {
+      font-weight: 300;
+      font-size: 32px;
+      text-decoration: none;
+      color: #a3caf1;
+      padding: 20px 15px;
+      display: inline-block;
+      margin-top: -10px;
+      z-index: 1;
+    }
+
+    .box {
+      animation: fade-out linear;
+      animation-timeline: view();
+      animation-range: exit;
+    }
+
+    .image {
+      animation: fade 3s ease-in-out;
+      width: 180px;
+      border-radius: 10px;
+      position: absolute;
+      top: 250px;
+      left: 380px;
+      animation: fade-out linear;
+      animation-timeline: view();
+      animation-range: exit -200px;
+    }
+
+    .image-text {
+      animation: fade 3s ease-in-out;
+      text-align: left;
+      font-size: 20px;
+      position: absolute;
+      top: 270px;
+      left: 600px;
+      animation: fade-out linear;
+      animation-timeline: view();
+      animation-range: exit -200px;
+    }
+
+    .main-image {
+      border-radius: 20px;
+      border: 1px solid transparent;
+      margin-bottom: -80px;
+      margin-top: 600px;
+      transition: scale 0.2s;
+      animation: fade-in linear;
+      animation-timeline: view();
+      animation-range-start: cover;
+      animation-range-end: 500px;
+    }
+
+    #main-audio {
+      animation: fade-in linear;
+      animation-timeline: view();
+      animation-range-start: cover;
+      animation-range-end: 100px;
+      animation: fade 1s ease-in-out;
+    }
+
+    h2 {
+      font-weight: 300;
+    }
+
+    .ytvd {
+      border-radius: 20px;
+      transition: scale 0.2s;
+      animation: fade 1s ease-in-out;
+      animation: fade-in linear;
+      animation-timeline: view();
+      animation-range-start: cover;
+      animation-range-end: 400px;
+    }
+
+    .ytvd:hover {
+      scale: 1.05;
+    }
+
+    footer {
+      background-color: #1a2847;
+      padding: 20px;
+      border-radius: 16px;
+      margin-top: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav-box">
+    <nav>
+      <p>TOKYO</p>
+    </nav>
+  </div>
+
+  <img src="logo.jpg" class="image" draggable="false">
+  <h2 class="image-text">This musical piece, originating<br>from the year 2018, has recently<br>surged in popularity
+    across<br>multiple social media platforms.</h2>
+
+  <br><br><br>
+  <div class="box">
+    <img class="main-image" src="logo.jpg" draggable="false" onclick="toggleAudio()"><br>
+    <audio controls id="main-audio">
+      <source src="Tokyo.mp3">
+    </audio><br><br>
+  </div>
+
+  <div class="box">
+    <h1
+      style="font-weight: 300; font-size: 50px; margin-bottom: -16px; animation: fade-in linear; animation-timeline: view(); animation-range-start: cover; animation-range-end: 400px;">
+      Tokyo
+    </h1>
+  </div>
+
+  <div class="box">
+    <h3
+      style="font-weight: 300; animation: fade-in linear; animation-timeline: view(); animation-range-start: cover; animation-range-end: 400px;">
+      Leat'eq
+    </h3>
+    <br><br><br><br><br><br><br><br>
+  </div>
+
+  <div class="box">
+    <iframe class="ytvd" width="616" height="346" src="https://www.youtube.com/embed/qR4jvErGitg?si=1sGTgKJs1Ve8I8wO"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+    <br><br><br><br><br><br><br>
+  </div>
+
+  <div class="box">
+    <h2
+      style="animation: fade-in linear; animation-timeline: view(); animation-range-start: cover; animation-range-end: 200px;">
+      A Song Made By LEAT'EQ On 2018.
+    </h2>
+  </div>
+
+  <footer>
+    <p>MADE WITH HTML, CSS AND JAVASCRIPT.</p>
+  </footer>
+
+  <script>
+    function toggleAudio() {
+      var audio = document.getElementById("main-audio");
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    }
+  </script>
+</body>
+
+</html>
